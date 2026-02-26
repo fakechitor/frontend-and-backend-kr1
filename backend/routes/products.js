@@ -78,12 +78,7 @@ router.delete("/:id", (req, res) => {
   if (products.length === before) {
     return res.status(404).json({ error: "Product not found" });
   }
-
-  // Вариант 1: вернуть 204 No Content (часто делают так)
-  // return res.status(204).send();
-
-  // Вариант 2: вернуть "ok" 
-  res.json({ ok: true });
+  return res.status(204).send();
 });
 
 module.exports = router;
