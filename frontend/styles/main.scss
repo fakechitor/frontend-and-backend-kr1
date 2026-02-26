@@ -1,10 +1,12 @@
 // Практика 1: SCSS (SASS) — карточка товара
 // Требования: переменные (>=2), миксин (>=1), вложенность селекторов.
 
-$color-primary: #3498db;
-$color-bg: #111;
-$color-surface: #1b1b1b;
-$color-text: #f5f5f5;
+$color-primary: #4f8cff;
+$color-bg: #f5f7fb;
+$color-surface: #ffffff;
+$color-text: #1f2937;
+$color-muted: #6b7280;
+
 $radius: 14px;
 $gap: 14px;
 
@@ -35,6 +37,7 @@ body {
   padding: 0 16px;
   display: grid;
   gap: 22px;
+
 }
 
 // Вложенность: описываем элементы карточки внутри .product-card
@@ -51,13 +54,12 @@ body {
   }
 
   &__image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 15px;
+    background: #f9fafb;
     border-radius: $radius;
-    min-height: 160px;
-
-    // Вместо реального фото — градиент (нужно заменить на <img>)
-    background:
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 45%),
-      linear-gradient(135deg, rgba(52,152,219,0.45), rgba(155,89,182,0.35));
   }
 
   &__content {
@@ -98,13 +100,4 @@ body {
   &:hover {
     filter: brightness(1.05);
   }
-}
-
-.note {
-  background: #151515;
-  border-radius: $radius;
-  padding: 16px;
-
-  &__title { margin: 0 0 10px; font-size: 18px; }
-  &__list { margin: 0; padding-left: 18px; opacity: 0.9; }
 }
